@@ -1,0 +1,189 @@
+---
+title: "Regime Shifts in R & Data Science within the BC Public Service"
+subtitle: "Observations from the field"
+author: "Stephanie Hazlitt"
+date: 2021-06-05
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    css: [default, metropolis, metropolis-fonts]
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      beforeInit: "https://platform.twitter.com/widgets.js"
+      ratio: '16:9'
+editor_options: 
+  chunk_output_type: console
+---
+
+
+```{r, include=FALSE, eval=FALSE}
+# Abstract
+# 
+# The BC Public Service has seen a significant shift towards the use of R and other data science tools for data analysis and communication. In the natural world, these regime shifts---large, persistent changes to a system---usually require some perturbation (either internal or external) or disturbance event to initiate the shift. This talk will share insider observations of some of the events, processes, and even a disturbance, that have helped kickstart and support the use and growth of R and develop a data science community. Together these changes, with some ongoing organizational support, have enabled some individual contributors, data science teams and leadership in the BC Public Service to shift towards more programmatic, open and reproducible data science workflows.
+```
+
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+options(width = 90)
+options(max_print = 5)
+options(silence_named_get_record_warning = TRUE)
+old.hooks <- fansi::set_knit_hooks(knitr::knit_hooks)
+options(crayon.enabled = TRUE)
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  #echo = FALSE,
+  comment = "",
+  warning = FALSE,
+  message = FALSE,
+  fig.path = "graphics/prod/figs",
+  fig.width = 10,
+  fig.height = 5
+)
+options(scipen = 10)
+
+library(dplyr)
+library(bcdata)
+library(bcmaps)
+library(sf)
+library(ggplot2)
+library(knitr)
+library(viridis)
+library(cowplot)
+options(tigris_use_cache = TRUE)
+```
+
+```{r, echo=FALSE}
+cascadia <- tidycensus::get_acs(state = c("WA", "OR"), geography = "state", 
+                  variables = "B19013_001", geometry = TRUE) %>% 
+  select(NAME) %>% 
+  transform_bc_albers() %>% 
+  bind_rows(
+    bc_neighbours() %>% 
+      filter(name == "British Columbia") %>% 
+      select(NAME = name)
+  )
+```
+
+
+class: clear
+
+## British Columbia 🇨🇦 &mdash; BC Public Service
+
+<hr>
+
+
+```{r, echo=FALSE, fig.width=12, fig.height=7, fig.align="center"}
+cascadia_map <- ggplot(cascadia) + 
+  geom_sf(aes(fill = NAME), alpha = .5) + 
+  geom_sf_text(aes(label = NAME), size = 4) +
+  geom_sf(data = bc_cities() %>% filter(NAME == "Victoria"),
+          size = 4, colour = "#3F3770FF") +
+  theme_minimal() +
+  coord_sf(datum = NA) +
+  labs(x = NULL, y = NULL, fill = NULL) +
+  theme(legend.position = "none") +
+  scale_fill_viridis(discrete = TRUE,
+                     option = "mako",
+                     begin = .3)
+
+map <- ggdraw() +
+  cowplot::draw_image(
+    "https://cascadiarconf.com/img/logo_2021.png",
+    x = -.2,
+    y = -.2,
+    scale = .5
+  ) +
+  cowplot::draw_image(
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/British_Columbia_Parliament_Buildings_in_Victoria%2C_British_Columbia%2C_Canada_01.jpg/1200px-British_Columbia_Parliament_Buildings_in_Victoria%2C_British_Columbia%2C_Canada_01.jpg",
+    x = .3,
+    y = .2,
+    scale = .3
+  ) +
+  draw_plot(cascadia_map)
+map
+```
+
+---
+
+
+class: clear
+
+## Growth in the Use of R
+
+<hr>
+
+
+---
+class: clear
+
+## @stephhazlitt
+
+<hr>
+
+`r include_graphics("images/slh_avatar.jpg", dpi = 200)`
+
+
+---
+
+class: clear
+
+## Regime Shifts
+
+<hr>
+
+ - Large, persistent changes in the structure and function of a system
+ - Shift usually occurs when a smooth change in an internal process (feedback) or a single disturbance (external shocks) triggers a completely different system behavior
+
+.Large.pull-left[
+
+```{r, out.width="85%", out.height="70%", echo=FALSE}
+include_graphics("https://c1.staticflickr.com/7/6185/6105772387_363a122269_z.jpg")
+```
+  ]
+
+.Large.pull-right[
+
+```{r, out.width="100%", out.height="100%", echo=FALSE}
+include_graphics("http://seaotters.com/wp-content/uploads/2013/05/640x360-no-otters-no-kelp1.jpg")
+```
+]
+
+.footnote[https://en.wikipedia.org/wiki/Regime_shift]
+
+---
+
+
+class: clear
+
+## change in an internal process
+
+<hr>
+
+
+
+---
+
+class: clear
+
+## single disturbance
+
+<hr>
+
+
+---
+
+class: clear
+
+## bcgov Data Science Community of Practice
+
+<hr>
+
+```{r, out.width="50%", fig.align="center", echo=FALSE}
+include_graphics("images/cop-logo.png")
+```
+
+
+
