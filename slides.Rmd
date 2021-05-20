@@ -6,7 +6,7 @@ date: 2021-06-05
 output:
   xaringan::moon_reader:
     lib_dir: libs
-    css: [default, metropolis, metropolis-fonts]
+    css: [default, metropolis-fonts, metropolis, custom.css]
     nature:
       highlightStyle: github
       highlightLines: true
@@ -45,18 +45,16 @@ knitr::opts_chunk$set(
 options(scipen = 10)
 
 library(dplyr)
-library(bcdata)
 library(bcmaps)
 library(sf)
 library(ggplot2)
-library(knitr)
 library(viridis)
-library(cowplot)
+library(tidycensus)
 options(tigris_use_cache = TRUE)
 ```
 
-```{r, echo=FALSE}
-cascadia <- tidycensus::get_acs(state = c("WA", "OR"), geography = "state", 
+```{r, echo=FALSE, cache=TRUE}
+cascadia <- get_acs(state = c("WA", "OR"), geography = "state", 
                   variables = "B19013_001", geometry = TRUE) %>% 
   select(NAME) %>% 
   transform_bc_albers() %>% 
@@ -67,102 +65,111 @@ cascadia <- tidycensus::get_acs(state = c("WA", "OR"), geography = "state",
   )
 ```
 
+class: clear, no-number
 
-class: clear
+## Cascadia Bioregion
+
+<hr>
+
+.pull-left[
+<img src="https://upload.wikimedia.org/wikipedia/commons/c/cd/CascadiaMap.png" alt="Map of Cascadia bioregion and Pacific Northwest provinces and states" style="max-width:45%; padding: 0px 0px 0px 200px;"/>
+]
+
+.pull-right[
+<img src="https://cascadiarconf.com/img/logo_2021.png" alt="CascadiaRConf2021 hexagon logo" style="max-width:50%; padding: 70px 0px 0px 0px;"/>
+]
+
+.footnote[
+Map credit: Lauren Tierney CC BY-SA 4.0]
+---
+
+class: clear, no-number
 
 ## British Columbia 🇨🇦 &mdash; BC Public Service
 
 <hr>
 
-
-```{r, echo=FALSE, fig.width=12, fig.height=7, fig.align="center"}
-cascadia_map <- ggplot(cascadia) + 
-  geom_sf(aes(fill = NAME), alpha = .5) + 
-  geom_sf_text(aes(label = NAME), size = 4) +
+.wide-right[
+```{r, echo=FALSE, fig.height=13, fig.align='left', fig.alt="Simple map of British Columbia, Washington and Oregon bounaries"}
+ggplot(cascadia) +
+  geom_sf(aes(fill = NAME), alpha = .5) +
+  geom_sf_text(aes(label = NAME), size = 10) +
   geom_sf(data = bc_cities() %>% filter(NAME == "Victoria"),
-          size = 4, colour = "#3F3770FF") +
+          size = 10, colour = "#3F3770FF") +
   theme_minimal() +
   coord_sf(datum = NA) +
   labs(x = NULL, y = NULL, fill = NULL) +
-  theme(legend.position = "none") +
+  theme(legend.position = "none",
+        plot.margin = margin(0, 2, 0, 0, unit = "cm")) +
   scale_fill_viridis(discrete = TRUE,
                      option = "mako",
                      begin = .3)
-
-map <- ggdraw() +
-  cowplot::draw_image(
-    "https://cascadiarconf.com/img/logo_2021.png",
-    x = -.2,
-    y = -.2,
-    scale = .5
-  ) +
-  cowplot::draw_image(
-    "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/British_Columbia_Parliament_Buildings_in_Victoria%2C_British_Columbia%2C_Canada_01.jpg/1200px-British_Columbia_Parliament_Buildings_in_Victoria%2C_British_Columbia%2C_Canada_01.jpg",
-    x = .3,
-    y = .2,
-    scale = .3
-  ) +
-  draw_plot(cascadia_map)
-map
 ```
+]
+
+.pull-left[
+<img src="images/parsa-mivehchi-rmHcG8mDtz0-unsplash.jpg" alt="Image of British Columbia's Parliament House building in Victoria, B.C." style="max-width:100%; padding: 50px 0px 0px 70px;"/>
+]
 
 ---
 
+class: clear, no-number
 
-class: clear
-
-## Growth in the Use of R
+## Growth in the Use of R & the R Ecosystem
 
 <hr>
 
+---
+
+class: clear, no-number
+
+## Regime Shifts in Natural Ecosystems
+
+<hr>
+
+.Large.pull-left[
+- Large, persistent changes in the structure and function of a system  
+  
+- Shifts occur with a smooth change  _or_ a disturbance  
+
+ ]
+
+.pull-right[
+<img src="images/mana5280-axqTLZ12Jss-unsplash.jpg" alt="Picture of a Sea Otter" style="max-width:80%; padding: 0px 0px 0px 0px;"/>
+  ]
+  
+.footnote[https://en.wikipedia.org/wiki/Regime_shift]
+  
+???
+
+- A smooth change in an internal process (feedback)
+- _OR_ a disturbance triggering a different system behaviour (external shock)
 
 ---
-class: clear
+
+class: clear, no-number
 
 ## @stephhazlitt
 
 <hr>
 
-`r include_graphics("images/slh_avatar.jpg", dpi = 200)`
-
+<img src="images/slh_avatar.jpg" alt="Picture of a Black Oystercatcher" style="max-width:30%; padding: 0px 0px 0px 0px;"/>
 
 ---
 
 class: clear
 
-## Regime Shifts
+## Change the beginning
 
 <hr>
-
- - Large, persistent changes in the structure and function of a system
- - Shift usually occurs when a smooth change in an internal process (feedback) or a single disturbance (external shocks) triggers a completely different system behavior
-
-.Large.pull-left[
-
-```{r, out.width="85%", out.height="70%", echo=FALSE}
-include_graphics("https://c1.staticflickr.com/7/6185/6105772387_363a122269_z.jpg")
-```
-  ]
-
-.Large.pull-right[
-
-```{r, out.width="100%", out.height="100%", echo=FALSE}
-include_graphics("http://seaotters.com/wp-content/uploads/2013/05/640x360-no-otters-no-kelp1.jpg")
-```
-]
-
-.footnote[https://en.wikipedia.org/wiki/Regime_shift]
 
 ---
 
-
 class: clear
 
-## change in an internal process
+## change 
 
 <hr>
-
-
 
 ---
 
@@ -172,18 +179,68 @@ class: clear
 
 <hr>
 
-
 ---
 
-class: clear
+class: clear, center, no-number
 
 ## bcgov Data Science Community of Practice
 
 <hr>
 
-```{r, out.width="50%", fig.align="center", echo=FALSE}
-include_graphics("images/cop-logo.png")
-```
+<img src="images/cop-logo.png" alt="Picture of bcgov Data Science Community of Practice logo sticker" style="max-width:50%; padding: 50px 0px 0px 0px;"/>
+
+---
+
+class: clear, no-number
+
+## Back to Regime Shifts
+
+<hr>
+
+.Large.pull-left[
+- non-linear
+
+- many stable states
+
+- expected to increase
+ ]
+
+.pull-right[
+<img src="images/matthew-bargh-sXb-Yf7GGs8-unsplash.jpg" style="max-width:80%;  alt="Picture of Columbia-Shuswap Ecosystem, British Columbia, Canada" padding: 0px 0px 0px 0px;"/>
+<img src="https://www.r-project.org/Rlogo.png" alt="R Project for Statistical Computing logo" style="max-width:40%; padding: 0px 0px 0px 100px;"/>
+]
+
+
+---
+
+class: clear, no-number, center
+
+## Cascadia R Conf 2021: Infectious Ideas
+
+<hr>
+
+"Be Kind, Be Calm, Be Safe"  – Dr. Bonnie Henry 🇨🇦 
+
+<img src="https://cascadiarconf.com/img/logo_2021.png" alt="CascadiaRConf2021" alt="CascadiaRConf2021 hexagon logo" style="max-width:20%; padding: 0px 0px 0px 0px;"/>
+
+@stephhazlitt on Twitter & GitHub  
+https://github.com/stephhazlitt/regime-shifts
+
+???
+
+Sessions:
+- Sharing R Love
+- Reporting & Sharing of R
+- Using R
+- Shiny and R
+- Education & Community
+
+
+
+
+
+
+
 
 
 
