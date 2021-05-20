@@ -50,6 +50,9 @@ library(sf)
 library(ggplot2)
 library(viridis)
 library(tidycensus)
+library(readr)
+library(stringr)
+library(cowplot)
 options(tigris_use_cache = TRUE)
 ```
 
@@ -102,8 +105,7 @@ ggplot(cascadia) +
   theme(legend.position = "none",
         plot.margin = margin(0, 2, 0, 0, unit = "cm")) +
   scale_fill_viridis(discrete = TRUE,
-                     option = "mako",
-                     begin = .3)
+                     option = "viridis")
 ```
 ]
 
@@ -115,9 +117,39 @@ ggplot(cascadia) +
 
 class: clear, no-number
 
-## Growth in the Use of R & the R Ecosystem
+## Growth in the Use of R
 
 <hr>
+
+```{r, echo=FALSE, fig.width=16, fig.height = 7, fig.align='center', fig.alt="Plot of milestones in use of R in BCPS"}
+
+r_use <- read_csv("data/r-growth-bcps.csv") %>%
+  ggplot(aes(year, fake_y, colour = factor(phase))) +
+  geom_point(size = 0) +
+  geom_text(aes(label = str_wrap(use_r, width = 10)),
+            size = 9, fontface = "bold") +
+  scale_x_continuous(limits = c(2010.5, 2021.5),
+                     breaks = seq(2011, 2021, 1)) +
+  scale_colour_viridis(discrete = TRUE,
+                       direction = -1,
+                       na.value = "grey50") +
+  scale_y_continuous(limits = c(-1, 12)) +
+  theme_minimal() +
+  labs(x = NULL, y = NULL) +
+  theme(
+    axis.text.y = element_blank(),
+    axis.text.x = element_text(size = 18, face = "bold"),
+    legend.position = "none",
+    panel.grid.minor = element_blank()
+  )
+  
+bcgov_logo <- "images/BCID_V_cmyk_pos.jpg"
+
+bcgov_r_plot <- ggdraw() +
+   draw_image(bcgov_logo, y = .3, x= -.4, scale = .35) +
+   draw_plot(r_use)
+bcgov_r_plot
+```
 
 ---
 
@@ -135,7 +167,7 @@ class: clear, no-number
  ]
 
 .pull-right[
-<img src="images/mana5280-axqTLZ12Jss-unsplash.jpg" alt="Picture of a Sea Otter" style="max-width:80%; padding: 0px 0px 0px 0px;"/>
+<img src="images/mana5280-axqTLZ12Jss-unsplash.jpg" alt="Picture of a Sea Otter" style="max-width:75%; padding: 0px 0px 0px 0px;"/>
   ]
   
 .footnote[https://en.wikipedia.org/wiki/Regime_shift]
@@ -153,20 +185,20 @@ class: clear, no-number
 
 <hr>
 
-.left-title[
+.wide-left[
 ```{r, eval = FALSE}
 ## Steph's Many Regime Shifts
 
 "Bird Biologist" %>% 
 "Research Scientist" %>% 
 "Conservation Biologist" %>% 
-"Environmental Data Scientist" %>% 
-"Data Scientist"
+"Head, Environmental Reporting" %>% 
+"Senior Data Scientist"
 ```
 ]
 
 
-<img src="images/slh_avatar.jpg" alt="Picture of a Black Oystercatcher" style="max-width:30%; padding: 30px 0px 0px 50px;"/>
+<img src="images/slh_avatar.jpg" alt="Picture of a Black Oystercatcher" style="max-width:25%; padding: 30px 50px 0px 0px;"/>
 
 
 ---
@@ -181,7 +213,20 @@ class: clear
 
 class: clear
 
+## Changes
+
+- Carpentries
+- RLadies
+
+<hr>
+
+---
+
+class: clear
+
 ## Disturbance
+
+- bcgov GitHub
 
 <hr>
 
@@ -190,6 +235,8 @@ class: clear
 class: clear
 
 ## More Changes
+
+- rOpenSci (unconf)
 
 <hr>
 
@@ -200,15 +247,22 @@ class: clear
 
 ## Open Source
 
+- RStudio + tidyverse
+- Emily Riederer
+
 <hr>
 
 ---
 
 class: clear
 
-## Positive Feedback Systems
+## Leadership
 
 <hr>
+
+- Ocean Health Index
+- shinyapps.io
+- CRAN
 
 ---
 
