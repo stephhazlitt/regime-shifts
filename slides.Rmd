@@ -57,15 +57,21 @@ options(tigris_use_cache = TRUE)
 ```
 
 ```{r, echo=FALSE, cache=TRUE}
-cascadia <- get_acs(state = c("WA", "OR"), geography = "state", 
-                  variables = "B19013_001", geometry = TRUE) %>% 
-  select(NAME) %>% 
-  transform_bc_albers() %>% 
-  bind_rows(
-    bc_neighbours() %>% 
-      filter(name == "British Columbia") %>% 
-      select(NAME = name)
-  )
+cascadia <- get_acs(
+  state = c("WA", "OR"),
+  geography = "state",
+  variables = "B19013_001",
+  geometry = TRUE
+) %>%
+  select(NAME) %>%
+  transform_bc_albers() %>%
+  bind_rows(bc_neighbours() %>%
+              filter(name == "British Columbia") %>%
+              select(NAME = name))
+
+r_use_df <- read_csv("data/r-growth-bcps.csv")
+
+bcgov_logo <- "images/BCID_V_cmyk_pos.jpg"
 ```
 
 class: clear, no-number
@@ -75,11 +81,11 @@ class: clear, no-number
 <hr>
 
 .pull-left[
-<img src="https://upload.wikimedia.org/wikipedia/commons/c/cd/CascadiaMap.png" alt="Map of Cascadia bioregion and Pacific Northwest provinces and states" style="max-width:45%; padding: 0px 0px 0px 200px;"/>
+<img src="https://upload.wikimedia.org/wikipedia/commons/c/cd/CascadiaMap.png" alt="Map of Cascadia bioregion and Pacific Northwest provinces and states sourced from Wikipedia https://en.wikipedia.org/wiki/Cascadia_(bioregion)" style="max-width:45%; padding: 0px 0px 0px 200px;"/>
 ]
 
 .pull-right[
-<img src="https://cascadiarconf.com/img/logo_2021.png" alt="CascadiaRConf2021 hexagon logo" style="max-width:50%; padding: 70px 0px 0px 0px;"/>
+<img src="https://cascadiarconf.com/img/logo_2021.png" alt="Image of the Cascadia R Conference 2021 hexagon-shaped logo" style="max-width:50%; padding: 70px 0px 0px 100px;"/>
 ]
 
 .footnote[
@@ -92,63 +98,71 @@ class: clear, no-number
 
 <hr>
 
+
 .wide-right[
-```{r, echo=FALSE, fig.height=13, fig.align='left', fig.alt="Simple map of British Columbia, Washington and Oregon bounaries"}
+```{r, echo=FALSE, fig.height=13, fig.align='centre', fig.alt="Map showing the boundaries of the province of British Columbia and Washington and Oregon states"}
 ggplot(cascadia) +
   geom_sf(aes(fill = NAME), alpha = .5) +
   geom_sf_text(aes(label = NAME), size = 10) +
-  geom_sf(data = bc_cities() %>% filter(NAME == "Victoria"),
-          size = 10, colour = "#3F3770FF") +
+  geom_sf(
+    data = bc_cities() %>% filter(NAME == "Victoria"),
+    size = 10,
+    colour = "#3F3770FF"
+  ) +
   theme_minimal() +
   coord_sf(datum = NA) +
   labs(x = NULL, y = NULL, fill = NULL) +
-  theme(legend.position = "none",
-        plot.margin = margin(0, 2, 0, 0, unit = "cm")) +
+  theme(legend.position = "none") +
   scale_fill_viridis(discrete = TRUE,
                      option = "viridis")
 ```
 ]
 
 .pull-left[
-<img src="images/parsa-mivehchi-rmHcG8mDtz0-unsplash.jpg" alt="Image of British Columbia's Parliament House building in Victoria, B.C." style="max-width:100%; padding: 50px 0px 0px 70px;"/>
+<img src="images/parsa-mivehchi-rmHcG8mDtz0-unsplash.jpg" alt="Image of British Columbia's Parliament House building located in Victoria, B.C. sourced from Unsplash" style="max-width:100%; padding: 50px 0px 0px 70px;"/>
 ]
 
 ---
 
 class: clear, no-number
 
-## Growth in the Use of R
+## Growth in the Use of R in the BCPS
 
 <hr>
 
-```{r, echo=FALSE, fig.width=16, fig.height = 7, fig.align='center', fig.alt="Plot of milestones in use of R in BCPS"}
-
-r_use <- read_csv("data/r-growth-bcps.csv") %>%
-  ggplot(aes(year, fake_y, colour = factor(phase))) +
-  geom_point(size = 0) +
-  geom_text(aes(label = str_wrap(use_r, width = 10)),
-            size = 9, fontface = "bold") +
-  scale_x_continuous(limits = c(2010.5, 2021.5),
-                     breaks = seq(2011, 2021, 1)) +
-  scale_colour_viridis(discrete = TRUE,
-                       direction = -1,
-                       na.value = "grey50") +
-  scale_y_continuous(limits = c(-1, 12)) +
-  theme_minimal() +
-  labs(x = NULL, y = NULL) +
-  theme(
-    axis.text.y = element_blank(),
-    axis.text.x = element_text(size = 18, face = "bold"),
-    legend.position = "none",
-    panel.grid.minor = element_blank()
+```{r, echo=FALSE, fig.width=16, fig.height = 7, fig.align='center', fig.alt="Plot of significant milestones, shown with text labelling, in the use of R in the BC Public Service 2001 to 2021"}
+r_changes <- ggdraw() +
+  draw_image(bcgov_logo,
+             y = .3,
+             x = -.4,
+             scale = .35) +
+  draw_plot(
+    r_use_df %>%
+      ggplot(aes(year, fake_y, colour = factor(initial))) +
+      geom_point(size = 0) +
+      geom_label(aes(label = str_wrap(use_r, width = 10)),
+                size = 9, fontface = "bold") +
+      scale_x_continuous(
+        limits = c(2010.5, 2021.5),
+        breaks = seq(2011, 2021, 1)
+      ) +
+      scale_colour_viridis(
+        discrete = TRUE,
+        direction = -1,
+        end = .1,
+        na.value = "grey50"
+      ) +
+      scale_y_continuous(limits = c(-1, 12)) +
+      theme_minimal() +
+      labs(x = NULL, y = NULL) +
+      theme(
+        axis.text.y = element_blank(),
+        axis.text.x = element_text(size = 18, face = "bold"),
+        legend.position = "none",
+        panel.grid.minor = element_blank()
+      )
   )
-  
-bcgov_logo <- "images/BCID_V_cmyk_pos.jpg"
-
-bcgov_r_plot <- ggdraw() +
-   draw_image(bcgov_logo, y = .3, x= -.4, scale = .35) +
-   draw_plot(r_use)
-bcgov_r_plot
+r_changes
 ```
 
 ---
@@ -162,16 +176,19 @@ class: clear, no-number
 .Large.pull-left[
 - Large, persistent changes in the structure and function of a system  
   
-- Shifts occur with a smooth change  _or_ a disturbance  
+- Shifts can occur with:
+  - a smooth change in an internal process  _or_
+  - a disturbance triggering a different system
 
  ]
 
 .pull-right[
-<img src="images/mana5280-axqTLZ12Jss-unsplash.jpg" alt="Picture of a Sea Otter" style="max-width:75%; padding: 0px 0px 0px 0px;"/>
-  ]
-  
+<img src="images/mana5280-axqTLZ12Jss-unsplash.jpg" alt="Image of a Sea Otter sourced from Unsplash" style="max-width:75%;"/>
+
 .footnote[https://en.wikipedia.org/wiki/Regime_shift]
-  
+  ]
+
+
 ???
 
 - A smooth change in an internal process (feedback)
@@ -197,78 +214,132 @@ class: clear, no-number
 ```
 ]
 
+<img src="images/slh_avatar.jpg" alt="Image of a Black Oystercatcher with coloured leg bands" style="max-width:25%; padding: 30px 50px 0px 0px;"/>
 
-<img src="images/slh_avatar.jpg" alt="Picture of a Black Oystercatcher" style="max-width:25%; padding: 30px 50px 0px 0px;"/>
+---
 
+class: clear, no-number
+
+## Early Shift: Internal Change
+
+<hr>
+
+.right-column[.center[
+<img src="images/Rcourse2014.jpg" alt="Picture of BCPS first R training course" style="max-width:70%; padding: 0px 0px 0px 0px;"/>
+]]
+
+.left-column[.center[
+<img src="https://www.thegeniusworks.com/wp-content/uploads/2015/10/coursera-logo.png" alt="Coursera logo" style="max-width:80%; padding: 30px 0px 0px 100px;"/>
+
+<img src="https://www.software.ac.uk/sites/default/files/The%20Carpentries.jpg" alt="The Carpentries logo" style="max-width:85%; padding: 0px 0px 0px 100px;"/>
+]]
+
+---
+
+class: clear, no-number
+
+## Disturbance: bcgov GitHub 🤯
+
+<hr>
+
+.center[
+<img src="images/bcgov-github-landing.png" alt="bcgov GitHub webpage" style="max-width:70%; padding: 0px 0px 0px 0px;"/>
+]
+
+---
+
+class: clear, no-number
+
+## Internal Change: Open Code & Automation
+
+<hr>
+
+- screen shots
+
+---
+
+class: clear, no-number
+
+## Regime Shift: Support and a Road Map
+
+<hr>
+
+.pull-left[.center[.no-margin[
+<img src="https://scotttalks.info/user-http/img/green_short_hexsticker.png" alt="rOpenSci logo" style="max-width:40%; padding: 20px 100px 0px 0px;"/>
+
+<img src="https://community.rstudio.com/uploads/default/original/3X/4/4/44b540951af86190ea817a3333ba114e335aed35.jpeg" alt="RStudio logo" style="max-width:40%; padding: 0px 0px 0px 200px;"/>
+]]]
+
+.pull-right[.center[
+<img src="https://psmag.com/.image/c_limit%2Ccs_srgb%2Cq_auto:good%2Cw_300/MTI3NTgxMzI1NzI4Mjk1NTU1/ocean-health-logo1.jpg" alt="OHI logo" style="max-width:100%; padding: 50px 0px 0px 0px;"/>
+
+.small[Lowndes et al. (2017) Our path to better science in less time using open data science tools. _Nature Ecology & Evolution_ https://www.nature.com/articles/s41559-017-0160/
+]]]
 
 ---
 
 class: clear
 
-## Changes
+## Internal Change: Community
 
 <hr>
 
----
-
-class: clear
-
-## Changes
-
-- Carpentries
-- RLadies
-
-<hr>
-
----
-
-class: clear
-
-## Disturbance
-
-- bcgov GitHub
-
-<hr>
-
----
-
-class: clear
-
-## More Changes
-
-- rOpenSci (unconf)
-
-<hr>
 
 
 ---
 
-class: clear
+class: clear, no-number, center
 
-## Open Source
-
-- RStudio + tidyverse
-- Emily Riederer
+## Internal Change: bcgov R Open Source
 
 <hr>
 
----
+<img src="https://raw.githubusercontent.com/bcgov/bcdata/master/inst/sticker/bcdata.png" alt="{bcdata} logo" style="max-width:12%; padding: 0px 0px 0px 0px;"/>
+<img src="https://github.com/bcgov/fasstr/blob/master/man/figures/fasstr.png?raw=true" alt="{fasstr} logo" style="max-width:100%; padding: 0px 0px 0px 0px;"/>
+<img src="https://github.com/bcgov/ssdtools/blob/master/man/figures/logo.png?raw=true" alt="{ssdtools} logo" style="max-width:100%; padding: 0px 0px 0px 0px;"/>
+<img src="https://github.com/bcgov/elucidate/blob/main/man/figures/hex-elucidate.png?raw=true" alt="{elucidate} logo" style="max-width:11%; padding: 0px 0px 0px 0px;"/>
+<img src="https://raw.githubusercontent.com/bcgov/bcgovr/master/tools/readme/logo.png" alt="{bcgovr} logo" style="max-width:100%; padding: 0px 0px 0px 0px;"/>
+<img src="https://raw.githubusercontent.com/bcgov/bcmaps/master/inst/sticker/bcmaps.png" alt="{bcmaps} logo" style="max-width:11%; padding: 0px 0px 0px 0px;"/>
+<img src="https://raw.githubusercontent.com/ropensci/tidyhydat/main/man/figures/tidyhydat.png" alt="{tidyhydat} logo" style="max-width:11%; padding: 0px 0px 0px 0px;"/>
 
-class: clear
+<br/>
 
-## Leadership
+More than 20 R 📦s in bcgov GitHub  
+ ~ individuals, teams & CRAN ~
 
-<hr>
+???
 
-- Ocean Health Index
-- shinyapps.io
 - CRAN
+- Emily Riederer talk
+
+---
+
+class: clear
+
+## Internal Change: Tools 4 Data Science
+
+<hr>
+
+- shinyapps.io
+
+---
+
+
+class: clear, no-number
+
+## Growth in the Use of R in the BCPS
+
+<hr>
+
+```{r, echo=FALSE, fig.width=16, fig.height = 7, fig.align='center', fig.alt="Plot of significant milestones, shown with text labelling, in the use of R in the BC Public Service 2001 to 2021"}
+r_changes
+```
 
 ---
 
 class: clear, center, no-number
 
-## Current State
+## Current State: Challenges & Opportunities
 
 <hr>
 
@@ -282,7 +353,7 @@ Challenges and focus moving forward
 
 class: clear, no-number
 
-## Back to Regime Shifts
+## Regime Shifts
 
 <hr>
 
@@ -310,7 +381,7 @@ class: clear, no-number, center
 
 "Be Kind, Be Calm, Be Safe"  – Dr. Bonnie Henry 🇨🇦 
 
-<img src="https://cascadiarconf.com/img/logo_2021.png" alt="CascadiaRConf2021" alt="CascadiaRConf2021 hexagon logo" style="max-width:20%; padding: 0px 0px 0px 0px;"/>
+<img src="https://cascadiarconf.com/img/logo_2021.png" alt="CascadiaRConf2021" alt="CascadiaRConf2021 hexagon logo" style="max-width:20%; padding: 0px 0px 50px 0px;"/>
 
 @stephhazlitt on Twitter & GitHub  
 https://github.com/stephhazlitt/regime-shifts
@@ -323,13 +394,5 @@ Sessions:
 - Using R
 - Shiny and R
 - Education & Community
-
-
-
-
-
-
-
-
 
 
