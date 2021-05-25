@@ -98,7 +98,6 @@ class: clear, no-number
 
 <hr>
 
-
 .wide-right[
 ```{r, echo=FALSE, fig.height=13, fig.align='centre', fig.alt="Map showing the boundaries of the province of British Columbia and Washington and Oregon states"}
 ggplot(cascadia) +
@@ -126,7 +125,7 @@ ggplot(cascadia) +
 
 class: clear, no-number
 
-## Growth in the Use of R in the BCPS
+## Growth in the Use of R in the BC Public Service
 
 <hr>
 
@@ -174,11 +173,9 @@ class: clear, no-number
 <hr>
 
 .Large.pull-left[
-- Large, persistent changes in the structure and function of a system  
+- Large changes in the structure and function of a system  
   
-- Shifts can occur with:
-  - a smooth change in an internal process  _or_
-  - a disturbance triggering a different system
+- Shifts can occur with: a smooth change in an internal process  _or_ a disturbance triggering a different system
 
  ]
 
@@ -203,7 +200,7 @@ class: clear, no-number
 <hr>
 
 .wide-left[
-```{r, eval = FALSE}
+```{r, eval=FALSE}
 ## Steph's Many Regime Shifts
 
 "Bird Biologist" %>% 
@@ -220,37 +217,68 @@ class: clear, no-number
 
 class: clear, no-number
 
-## Early Shift: Internal Change
+## Internal Change: Building Community
 
 <hr>
 
 .right-column[.center[
-<img src="images/Rcourse2014.jpg" alt="Picture of BCPS first R training course" style="max-width:70%; padding: 0px 0px 0px 0px;"/>
+<img src="images/Rcourse2014.jpg" alt="Picture of BCPS first R training course" style="max-width:65%; padding: 0px 0px 0px 50px;"/>
 ]]
 
-.left-column[.center[
-<img src="https://www.thegeniusworks.com/wp-content/uploads/2015/10/coursera-logo.png" alt="Coursera logo" style="max-width:80%; padding: 30px 0px 0px 100px;"/>
-
-<img src="https://www.software.ac.uk/sites/default/files/The%20Carpentries.jpg" alt="The Carpentries logo" style="max-width:85%; padding: 0px 0px 0px 100px;"/>
-]]
-
----
-
-class: clear, no-number
-
-## Disturbance: bcgov GitHub 🤯
-
-<hr>
-
-.center[
-<img src="images/bcgov-github-landing.png" alt="bcgov GitHub webpage" style="max-width:70%; padding: 0px 0px 0px 0px;"/>
+.left-column[
+<img src="https://www.software.ac.uk/sites/default/files/The%20Carpentries.jpg" alt="The Carpentries logo" style="max-width:85%; padding: 20px 0px 0px 50px;"/><img src="https://scotttalks.info/user-http/img/green_short_hexsticker.png" alt="rOpenSci logo" style="max-width:90%; padding: 0px 0px 0px 130px;"/>
 ]
 
 ---
 
 class: clear, no-number
 
-## Internal Change: Open Code & Automation
+## Disturbance: bcgov GitHub
+
+<hr>
+
+.center[
+<img src="images/bcgov-github-2013.png" alt="bcgov GitHub web page screen shot from 2013" style="max-width:80%;"/>
+]
+
+.footnote[https://github.com/bcgov (2013)]
+
+---
+
+class: clear, no-number, center
+
+## Open Learning Content
+
+<hr>
+
+<img src="images/bcgov-github-ds-resources.png" alt="" style="max-width:70%;"/>
+
+.pull-right[
+.footnote[https://github.com/bcgov/bcgov-data-science-resources/wiki]]
+
+---
+
+class: clear, no-number
+
+## Helping Became Easier
+
+<hr>
+
+.pull-left[
+<img src="images/slh-helpme-gist.png" alt="" style="max-width:150%; padding: 0px 0px 0px 0px;"/>
+]
+
+.pull-right[
+<img src="images/code-together_Feb2020.jpeg" alt="" style="max-width:80%; padding: 150px 0px 0px 120px;"/>
+]
+
+.footnote[https://gist.github.com/stephhazlitt/c6ccc36b5ea0ff190cf479659d164b8e]
+
+---
+
+class: clear, no-number
+
+## Open Code & Collaboration
 
 <hr>
 
@@ -258,39 +286,22 @@ class: clear, no-number
 
 ---
 
-class: clear, no-number
+class: clear, no-number, center
 
-## Regime Shift: Support and a Road Map
-
-<hr>
-
-.pull-left[.center[.no-margin[
-<img src="https://scotttalks.info/user-http/img/green_short_hexsticker.png" alt="rOpenSci logo" style="max-width:40%; padding: 20px 100px 0px 0px;"/>
-
-<img src="https://community.rstudio.com/uploads/default/original/3X/4/4/44b540951af86190ea817a3333ba114e335aed35.jpeg" alt="RStudio logo" style="max-width:40%; padding: 0px 0px 0px 200px;"/>
-]]]
-
-.pull-right[.center[
-<img src="https://psmag.com/.image/c_limit%2Ccs_srgb%2Cq_auto:good%2Cw_300/MTI3NTgxMzI1NzI4Mjk1NTU1/ocean-health-logo1.jpg" alt="OHI logo" style="max-width:100%; padding: 50px 0px 0px 0px;"/>
-
-.small[Lowndes et al. (2017) Our path to better science in less time using open data science tools. _Nature Ecology & Evolution_ https://www.nature.com/articles/s41559-017-0160/
-]]]
-
----
-
-class: clear
-
-## Internal Change: Community
+## External Supports
 
 <hr>
 
-
+.pull-left[
+<img src="https://community.rstudio.com/uploads/default/original/3X/4/4/44b540951af86190ea817a3333ba114e335aed35.jpeg" alt="RStudio logo" style="max-width:30%; padding: 100px 0px 0px 0px;"/>
+<img src="https://scotttalks.info/user-http/img/green_short_hexsticker.png" alt="rOpenSci logo" style="max-width:30%; padding: 0px 0px 0px 130px;"/>
+]
 
 ---
 
 class: clear, no-number, center
 
-## Internal Change: bcgov R Open Source
+## bcgov R Open Source
 
 <hr>
 
@@ -304,46 +315,42 @@ class: clear, no-number, center
 
 <br/>
 
-More than 20 R 📦s in bcgov GitHub  
- ~ individuals, teams & CRAN ~
-
 ???
 
 - CRAN
 - Emily Riederer talk
-
----
-
-class: clear
-
-## Internal Change: Tools 4 Data Science
-
-<hr>
-
-- shinyapps.io
-
----
-
-
-class: clear, no-number
-
-## Growth in the Use of R in the BCPS
-
-<hr>
-
-```{r, echo=FALSE, fig.width=16, fig.height = 7, fig.align='center', fig.alt="Plot of significant milestones, shown with text labelling, in the use of R in the BC Public Service 2001 to 2021"}
-r_changes
-```
+- individuals, teams & CRAN
 
 ---
 
 class: clear, center, no-number
 
-## Current State: Challenges & Opportunities
+## Current State
 
 <hr>
 
-<img src="images/cop-logo.png" alt="Picture of bcgov Data Science Community of Practice logo sticker" style="max-width:50%; padding: 50px 0px 0px 0px;"/>
+<img src="images/bcgov-github-landing-2021.png" alt="bcgov GitHub web page screen shot from 2021" style="max-width:70%;"/>
+
+---
+
+class: clear, center, no-number
+
+## Current State
+
+<hr>
+
+.right-column[
+<img src="images/cop-logo.png" alt="Picture of bcgov Data Science Community of Practice logo sticker" style="max-width:80%; padding: 0px 0px 0px 0px;"/>
+]
+
+.left-column[
+<img src="https://git-scm.com/images/logo@2x.png" alt="Git logo" style="max-width:80%; padding: 75px 0px 0px 0px;"/>  
+
+<img src="https://www.r-project.org/Rlogo.png" alt="R Project for Statistical Computing logo" style="max-width:60%; padding: 0px 0px 0px 0px;"/>  
+
+<img src="https://www.python.org/static/img/python-logo@2x.png" alt="Python logo" style="max-width:120%; padding: 0px 0px 0px 20px;"/>
+
+]
 
 ???
 
@@ -353,22 +360,30 @@ Challenges and focus moving forward
 
 class: clear, no-number
 
-## Regime Shifts
+## Regime Shifts Revisited
 
 <hr>
-
-.Large.pull-left[
+.pull-left[
 - non-linear
-
 - many stable states
-
 - expected to increase
- ]
 
-.pull-right[
-<img src="images/matthew-bargh-sXb-Yf7GGs8-unsplash.jpg" style="max-width:80%;  alt="Picture of Columbia-Shuswap Ecosystem, British Columbia, Canada" padding: 0px 0px 0px 0px;"/>
-<img src="https://www.r-project.org/Rlogo.png" alt="R Project for Statistical Computing logo" style="max-width:40%; padding: 0px 0px 0px 100px;"/>
+```{r, echo=FALSE, fig.width=5, fig.height=3, fig.alt=""}
+df <- data.frame(y = c(1,2,1,2,3,3,3,3,1,1,5,5,5,8,8,8,7,9,9,8,9,10),
+                 x = c(1:22))
+df %>% 
+  ggplot() +
+  geom_line(aes(x,y), colour = "#440154FF", size = 4) +
+  labs(x = NULL, y = NULL) +
+  theme_minimal() +
+  theme(axis.text = element_blank())
+```
+
 ]
+
+.Large[.pull-right[
+<img src="images/matthew-bargh-sXb-Yf7GGs8-unsplash.jpg" style="max-width:90%;  alt="Picture of Columbia-Shuswap Ecosystem, British Columbia, Canada" padding: 100px 100px 0px 0px;"/>
+ ]]
 
 
 ---
@@ -381,7 +396,7 @@ class: clear, no-number, center
 
 "Be Kind, Be Calm, Be Safe"  – Dr. Bonnie Henry 🇨🇦 
 
-<img src="https://cascadiarconf.com/img/logo_2021.png" alt="CascadiaRConf2021" alt="CascadiaRConf2021 hexagon logo" style="max-width:20%; padding: 0px 0px 50px 0px;"/>
+<img src="https://cascadiarconf.com/img/logo_2021.png" alt="CascadiaRConf2021" alt="CascadiaRConf2021 hexagon logo" style="max-width:20%; padding: 0px 0px 0px 0px;"/>
 
 @stephhazlitt on Twitter & GitHub  
 https://github.com/stephhazlitt/regime-shifts
