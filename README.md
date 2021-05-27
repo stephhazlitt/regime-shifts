@@ -1,10 +1,3 @@
-<!-- 
-Add a project state badge
-
-See <https://github.com/BCDevExchange/Our-Project-Docs/blob/master/discussion/projectstates.md> 
-If you have bcgovr installed and you use RStudio, click the 'Insert BCDevex Badge' Addin.
--->
-
 [![img](https://img.shields.io/badge/Lifecycle-Maturing-007EC6)](https://github.com/bcgov/repomountie/blob/master/doc/lifecycle-badges.md)
 
 ## regime-shifts
@@ -25,10 +18,12 @@ Virtual Conference, June 5th, 2021
 - Cascadia bioregion: https://en.wikipedia.org/wiki/Cascadia_(bioregion)
 - Regime shifts: https://en.wikipedia.org/wiki/Regime_shift
 
-#### Photos (if not mine or already attributed)
+#### Images (if not already attributed)
 - British Columbia Parliament House: Parsa Mivehchi - Unsplash https://unsplash.com/license
 - Sea Otter: Mana5280 - Unsplash https://unsplash.com/license
 - Columbia-Shuswap, British Columbia: Matthew Bargh - Unsplash https://unsplash.com/license
+- bcgov Data Science CoP photos - [Copyright Province of British Columbia](https://www2.gov.bc.ca/gov/content/home/copyright)
+- BC Mark - [Crown Copyright](https://www2.gov.bc.ca/gov/content?id=202ADEEF3B3840E99ABAB3D1D1A5007B) 
 
 
 #### Licence
