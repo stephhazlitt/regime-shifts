@@ -291,40 +291,23 @@ class: clear, no-number, center
 
 ---
 
-class: clear, no-number
+class: clear, no-number, center
 
 ## Internal Change: Still Building Community
 
 <hr>
 
-.right-column[
-<img src="images/cop-logo.png" alt="Picture of bcgov Data Science Community of Practice logo sticker" style="max-width:60%; padding: 0px 0px 0px 0px;"/>
 
-<img src="https://git-scm.com/images/logo@2x.png" alt="Git logo" style="max-width:15%; padding: 0px 0px 0px 0px;"/><img src="https://www.r-project.org/Rlogo.png" alt="R Project for Statistical Computing logo" style="max-width:10%; padding: 0px 0px 0px 0px;"/><img src="https://www.python.org/static/img/python-logo@2x.png" alt="Python logo" style="max-width:30%; padding: 0px 0px 0px 0px;"/>
-]
+<img src="images/cop-logo.png" alt="Picture of bcgov Data Science Community of Practice logo sticker" style="max-width:47%; padding: 0px 0px 0px 0px;"/><img src="https://pbs.twimg.com/media/EXxdBfvXsAARMyU?format=jpg&name=medium" style="max-width:40%; padding: 0px 0px 40px 100px;"/>
 
-.left-column[
+<img src="https://git-scm.com/images/logo@2x.png" alt="Git logo" style="max-width:8%; padding: 0px 15px 10px 100px;"/><img src="https://www.r-project.org/Rlogo.png" alt="R Project for Statistical Computing logo" style="max-width:5%; padding: 0px 15px 10px 0px;"/><img src="https://www.python.org/static/img/python-logo@2x.png" alt="Python logo" style="max-width:15%; padding: 00px 0px 0px 0px;"/>
 
 
-]
+
 
 ???
 
 Challenges and focus moving forward
-
-
----
-
-class: clear, no-number, center
-
-## Supports
-
-<hr>
-
-.pull-left[
-<img src="https://community.rstudio.com/uploads/default/original/3X/4/4/44b540951af86190ea817a3333ba114e335aed35.jpeg" alt="RStudio logo" style="max-width:30%; padding: 100px 0px 0px 0px;"/>
-<img src="https://scotttalks.info/user-http/img/green_short_hexsticker.png" alt="rOpenSci logo" style="max-width:30%; padding: 0px 0px 0px 130px;"/>
-]
 
 ---
 
@@ -341,7 +324,6 @@ class: clear, no-number, center
 <img src="https://raw.githubusercontent.com/bcgov/bcgovr/master/tools/readme/logo.png" alt="{bcgovr} logo" style="max-width:100%; padding: 0px 0px 0px 0px;"/>
 <img src="https://raw.githubusercontent.com/bcgov/bcmaps/master/inst/sticker/bcmaps.png" alt="{bcmaps} logo" style="max-width:11%; padding: 0px 0px 0px 0px;"/>
 <img src="https://raw.githubusercontent.com/ropensci/tidyhydat/main/man/figures/tidyhydat.png" alt="{tidyhydat} logo" style="max-width:11%; padding: 0px 0px 0px 0px;"/>
-
 
 <img src="images/env-shiny-example.png" alt="" style="max-width:40%; padding: 0px 50px 0px 0px;"/>
 <img src="images/bcstats-shiny-example.png" alt="" style="max-width:45%; padding: 0px 0px 20px 0px;"/>
