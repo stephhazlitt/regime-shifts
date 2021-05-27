@@ -94,7 +94,7 @@ Map credit: Lauren Tierney CC BY-SA 4.0]
 
 class: clear, no-number
 
-## British Columbia 🇨🇦 &mdash; BC Public Service
+## Growth & Use of R in the BC Public Service 🇨🇦 
 
 <hr>
 
@@ -120,6 +120,55 @@ ggplot(cascadia) +
 .pull-left[
 <img src="images/parsa-mivehchi-rmHcG8mDtz0-unsplash.jpg" alt="Image of British Columbia's Parliament House building located in Victoria, B.C. sourced from Unsplash" style="max-width:100%; padding: 50px 0px 0px 70px;"/>
 ]
+
+---
+
+class: clear, no-number
+
+## @stephhazlitt
+
+<hr>
+
+.wide-left[
+```{r, eval=FALSE}
+## Steph's Many Shifts
+
+"Bird Biologist" %>% 
+"Research Scientist" %>% 
+"Conservation Biologist" %>% 
+"Head, Environmental Reporting" %>% 
+"Senior Data Scientist"
+```
+]
+
+<img src="images/slh_avatar.jpg" alt="Image of a Black Oystercatcher with coloured leg bands" style="max-width:25%; padding: 30px 50px 0px 0px;"/>
+
+---
+
+class: clear, no-number
+
+## Regime Shifts in Natural Ecosystems
+
+<hr>
+
+.Large.pull-left[
+- Large changes in the structure and function of a system  
+  
+- Shifts can occur with: a smooth internal change in a process  _or_ an external  disturbance triggering a change
+
+ ]
+
+.pull-right[
+<img src="images/mana5280-axqTLZ12Jss-unsplash.jpg" alt="Image of a Sea Otter sourced from Unsplash" style="max-width:75%;"/>
+
+.footnote[https://en.wikipedia.org/wiki/Regime_shift]
+  ]
+
+
+???
+
+- A smooth change in an internal process (feedback)
+- _OR_ a disturbance triggering a different system behaviour (external shock)
 
 ---
 
@@ -164,54 +213,6 @@ r_changes <- ggdraw() +
 r_changes
 ```
 
----
-
-class: clear, no-number
-
-## Regime Shifts in Natural Ecosystems
-
-<hr>
-
-.Large.pull-left[
-- Large changes in the structure and function of a system  
-  
-- Shifts can occur with: a smooth change in an internal process  _or_ a disturbance triggering a different system
-
- ]
-
-.pull-right[
-<img src="images/mana5280-axqTLZ12Jss-unsplash.jpg" alt="Image of a Sea Otter sourced from Unsplash" style="max-width:75%;"/>
-
-.footnote[https://en.wikipedia.org/wiki/Regime_shift]
-  ]
-
-
-???
-
-- A smooth change in an internal process (feedback)
-- _OR_ a disturbance triggering a different system behaviour (external shock)
-
----
-
-class: clear, no-number
-
-## @stephhazlitt
-
-<hr>
-
-.wide-left[
-```{r, eval=FALSE}
-## Steph's Many Regime Shifts
-
-"Bird Biologist" %>% 
-"Research Scientist" %>% 
-"Conservation Biologist" %>% 
-"Head, Environmental Reporting" %>% 
-"Senior Data Scientist"
-```
-]
-
-<img src="images/slh_avatar.jpg" alt="Image of a Black Oystercatcher with coloured leg bands" style="max-width:25%; padding: 30px 50px 0px 0px;"/>
 
 ---
 
@@ -233,7 +234,7 @@ class: clear, no-number
 
 class: clear, no-number
 
-## Disturbance: bcgov GitHub
+## External Disturbance: bcgov GitHub
 
 <hr>
 
@@ -276,19 +277,47 @@ class: clear, no-number
 
 ---
 
-class: clear, no-number
+class: clear, no-number, center
 
-## Open Code & Collaboration
+## Open Code 
 
 <hr>
 
-- screen shots
+✂️ & 📋 -> Collaborations -> Contributions -> Code Reviews
+
+<img src="images/bcgov-github-landing-2021.png" alt="bcgov GitHub web page screen shot from 2021" style="max-width:58%;"/>
+
+.pull-right[.footnote[https://github.com/bcgov]]
+
+---
+
+class: clear, no-number
+
+## Internal Change: Still Building Community
+
+<hr>
+
+.right-column[
+<img src="images/cop-logo.png" alt="Picture of bcgov Data Science Community of Practice logo sticker" style="max-width:60%; padding: 0px 0px 0px 0px;"/>
+
+<img src="https://git-scm.com/images/logo@2x.png" alt="Git logo" style="max-width:15%; padding: 0px 0px 0px 0px;"/><img src="https://www.r-project.org/Rlogo.png" alt="R Project for Statistical Computing logo" style="max-width:10%; padding: 0px 0px 0px 0px;"/><img src="https://www.python.org/static/img/python-logo@2x.png" alt="Python logo" style="max-width:30%; padding: 0px 0px 0px 0px;"/>
+]
+
+.left-column[
+
+
+]
+
+???
+
+Challenges and focus moving forward
+
 
 ---
 
 class: clear, no-number, center
 
-## External Supports
+## Supports
 
 <hr>
 
@@ -313,7 +342,9 @@ class: clear, no-number, center
 <img src="https://raw.githubusercontent.com/bcgov/bcmaps/master/inst/sticker/bcmaps.png" alt="{bcmaps} logo" style="max-width:11%; padding: 0px 0px 0px 0px;"/>
 <img src="https://raw.githubusercontent.com/ropensci/tidyhydat/main/man/figures/tidyhydat.png" alt="{tidyhydat} logo" style="max-width:11%; padding: 0px 0px 0px 0px;"/>
 
-<br/>
+
+<img src="images/env-shiny-example.png" alt="" style="max-width:40%; padding: 0px 50px 0px 0px;"/>
+<img src="images/bcstats-shiny-example.png" alt="" style="max-width:45%; padding: 0px 0px 20px 0px;"/>
 
 ???
 
@@ -323,44 +354,9 @@ class: clear, no-number, center
 
 ---
 
-class: clear, center, no-number
-
-## Current State
-
-<hr>
-
-<img src="images/bcgov-github-landing-2021.png" alt="bcgov GitHub web page screen shot from 2021" style="max-width:70%;"/>
-
----
-
-class: clear, center, no-number
-
-## Current State
-
-<hr>
-
-.right-column[
-<img src="images/cop-logo.png" alt="Picture of bcgov Data Science Community of Practice logo sticker" style="max-width:80%; padding: 0px 0px 0px 0px;"/>
-]
-
-.left-column[
-<img src="https://git-scm.com/images/logo@2x.png" alt="Git logo" style="max-width:80%; padding: 75px 0px 0px 0px;"/>  
-
-<img src="https://www.r-project.org/Rlogo.png" alt="R Project for Statistical Computing logo" style="max-width:60%; padding: 0px 0px 0px 0px;"/>  
-
-<img src="https://www.python.org/static/img/python-logo@2x.png" alt="Python logo" style="max-width:120%; padding: 0px 0px 0px 20px;"/>
-
-]
-
-???
-
-Challenges and focus moving forward
-
----
-
 class: clear, no-number
 
-## Regime Shifts Revisited
+## Regime Shifts & R for Data Science
 
 <hr>
 .pull-left[
@@ -376,7 +372,11 @@ df %>%
   geom_line(aes(x,y), colour = "#440154FF", size = 4) +
   labs(x = NULL, y = NULL) +
   theme_minimal() +
-  theme(axis.text = element_blank())
+  theme(axis.text = element_blank()) +
+  annotate("segment", x = 22.2, xend = 22, y = 8.4, yend = 10,
+           colour = "#440154FF", size = 4, lineend = "round") +
+  annotate("segment", x = 20, xend = 22, y = 9.6, yend = 10,
+           colour = "#440154FF", size = 4, lineend = "round") 
 ```
 
 ]
@@ -384,7 +384,6 @@ df %>%
 .Large[.pull-right[
 <img src="images/matthew-bargh-sXb-Yf7GGs8-unsplash.jpg" style="max-width:90%;  alt="Picture of Columbia-Shuswap Ecosystem, British Columbia, Canada" padding: 100px 100px 0px 0px;"/>
  ]]
-
 
 ---
 
