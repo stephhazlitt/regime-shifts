@@ -135,7 +135,7 @@ class: clear, no-number
 
 "Bird Biologist" %>% 
 "Research Scientist" %>% 
-"Conservation Biologist" %>% 
+"Conservation Specialist" %>% 
 "Head, Environmental Reporting" %>% 
 "Senior Data Scientist"
 ```
@@ -279,7 +279,7 @@ class: clear, no-number
 
 class: clear, no-number, center
 
-## Open Code 
+## Open Code 🚀
 
 <hr>
 
@@ -288,26 +288,6 @@ class: clear, no-number, center
 <img src="images/bcgov-github-landing-2021.png" alt="bcgov GitHub web page screen shot from 2021" style="max-width:58%;"/>
 
 .pull-right[.footnote[https://github.com/bcgov]]
-
----
-
-class: clear, no-number, center
-
-## Internal Change: Still Building Community
-
-<hr>
-
-
-<img src="images/cop-logo.png" alt="Picture of bcgov Data Science Community of Practice logo sticker" style="max-width:47%; padding: 0px 0px 0px 0px;"/><img src="https://pbs.twimg.com/media/EXxdBfvXsAARMyU?format=jpg&name=medium" style="max-width:40%; padding: 0px 0px 40px 100px;"/>
-
-<img src="https://git-scm.com/images/logo@2x.png" alt="Git logo" style="max-width:8%; padding: 0px 15px 10px 100px;"/><img src="https://www.r-project.org/Rlogo.png" alt="R Project for Statistical Computing logo" style="max-width:5%; padding: 0px 15px 10px 0px;"/><img src="https://www.python.org/static/img/python-logo@2x.png" alt="Python logo" style="max-width:15%; padding: 00px 0px 0px 0px;"/>
-
-
-
-
-???
-
-Challenges and focus moving forward
 
 ---
 
@@ -333,6 +313,22 @@ class: clear, no-number, center
 - CRAN
 - Emily Riederer talk
 - individuals, teams & CRAN
+
+---
+
+class: clear, no-number, center
+
+## Current State: Building Community 
+
+<hr>
+
+<img src="images/cop-logo.png" alt="Picture of bcgov Data Science Community of Practice logo sticker" style="max-width:47%; padding: 0px 0px 0px 0px;"/><img src="https://pbs.twimg.com/media/EXxdBfvXsAARMyU?format=jpg&name=medium" style="max-width:40%; padding: 0px 0px 40px 100px;"/>
+
+<img src="https://git-scm.com/images/logo@2x.png" alt="Git logo" style="max-width:12%; padding: 0px 15px 10px 100px;"/><img src="https://www.r-project.org/Rlogo.png" alt="R Project for Statistical Computing logo" style="max-width:8%; padding: 0px 15px 10px 0px;"/><img src="https://www.python.org/static/img/python-logo@2x.png" alt="Python logo" style="max-width:20%; padding: 00px 0px 0px 0px;"/>
+
+???
+
+Challenges and focus moving forward
 
 ---
 
