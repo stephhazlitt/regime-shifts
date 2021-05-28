@@ -1,5 +1,5 @@
 year,fake_y,use_r,initial,phases,current
-2011,1,individuals using R,1,1,1
+2012,1,individuals using R,1,1,1
 2012,4,teams using R,1,1,1
 2013,9,bcgov GitHub's 1st repo == R,1,1,1
 2014,5,Rmd reports,1,1,1
@@ -9,4 +9,4 @@ year,fake_y,use_r,initial,phases,current
 2018,11,shinyapps.io ,1,2,1
 2019,7,pkgdown sites,1,2,1
 2020,1,2020?,NA,NA,NA
-2021,7,> 50 ShinyApps & R packages,1,2,2
+2021,9,> 50 ShinyApps & R packages,1,2,2
