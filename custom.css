@@ -56,6 +56,11 @@ h3 {
   font-size: 16pt;
 }
 
+.teeny {
+  font-size: 9pt;
+    float: right;
+}
+
 
 .remark-slide-content {
   font-size: 26pt;
