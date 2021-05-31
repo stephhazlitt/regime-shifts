@@ -17,13 +17,11 @@ editor_options:
   chunk_output_type: console
 ---
 
-
 ```{r, include=FALSE, eval=FALSE}
 # Abstract
 # 
 # The BC Public Service has seen a significant shift towards the use of R and other data science tools for data analysis and communication. In the natural world, these regime shifts---large, persistent changes to a system---usually require some perturbation (either internal or external) or disturbance event to initiate the shift. This talk will share insider observations of some of the events, processes, and even a disturbance, that have helped kickstart and support the use and growth of R and develop a data science community. Together these changes, with some ongoing organizational support, have enabled some individual contributors, data science teams and leadership in the BC Public Service to shift towards more programmatic, open and reproducible data science workflows.
 ```
-
 
 ```{r setup, include=FALSE}
 options(htmltools.dir.version = FALSE)
@@ -74,8 +72,6 @@ r_use_df <- read_csv("data/r-growth-bcps.csv")
 
 bcgov_logo <- "images/BCID_V_cmyk_pos.jpg"
 ```
-
-
 
 class: clear, no-number
 
