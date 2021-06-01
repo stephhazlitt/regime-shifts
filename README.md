@@ -17,6 +17,8 @@ Virtual Conference, June 5th, 2021
 
 - Cascadia bioregion: https://en.wikipedia.org/wiki/Cascadia_(bioregion)
 - Regime shifts: https://en.wikipedia.org/wiki/Regime_shift
+- Municipal Solid Waste Disposal in B.C. (1990-2018) Shiny App: https://www.env.gov.bc.ca/soe/indicators/sustainability/municipal-solid-waste.html
+- B.C. Economic Recovery Indicators Shiny App: https://bcstats.shinyapps.io/Economic-Indicators/
 
 #### Images (if not already attributed)
 - British Columbia Parliament House: Parsa Mivehchi - Unsplash https://unsplash.com/license
