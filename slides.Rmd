@@ -52,6 +52,9 @@ library(readr)
 library(stringr)
 library(cowplot)
 library(tweetrmd)
+library(gh)
+library(purrr)
+library(lubridate)
 options(tigris_use_cache = TRUE)
 ```
 
@@ -140,19 +143,13 @@ r_changes <- ggdraw() +
              scale = .35) +
   draw_plot(
     r_use_df %>%
-      ggplot(aes(year, fake_y, colour = factor(initial))) +
+      ggplot(aes(year, fake_y)) +
       geom_point(size = 0) +
       geom_label(aes(label = str_wrap(use_r, width = 10)),
-                size = 9, fontface = "bold") +
+                size = 9, fontface = "bold", colour = "#440154FF") +
       scale_x_continuous(
         limits = c(2011, 2021.5),
         breaks = seq(2012, 2021, 1)
-      ) +
-      scale_colour_viridis(
-        discrete = TRUE,
-        direction = -1,
-        end = .1,
-        na.value = "grey50"
       ) +
       scale_y_continuous(limits = c(-1, 12)) +
       theme_minimal() +
@@ -197,7 +194,7 @@ class: clear, no-number
 
 class: clear, no-number, center
 
-## Change: Building a Learning Community
+## Internal Change: Building a Learning Community
 
 <hr>
 
@@ -286,6 +283,16 @@ class: clear, no-number, center
 
 class: clear, no-number, center
 
+## ## Growth in the Use of R & in the BC Public Service
+
+<hr>
+
+
+
+---
+
+class: clear, no-number, center
+
 ## Current State: bcgov R Open Source
 
 <hr>
@@ -337,8 +344,10 @@ class: clear, no-number
  ]
  
  .pull-right[
- <img src="images/cop-poster.png" alt="bcgov Data Science Community of Practice logo sticker" style="max-width:100%;"/>
- ]
+ <img src="images/ds-cop-poster.png" alt="bcgov Data Science Community of Practice logo sticker" style="max-width:100%;"/>
+ 
+ .footnote[bcgov Data Science CoP webinar poster, May 19th 2021
+ ]]
 
 ---
 
@@ -379,20 +388,17 @@ class: clear, no-number
 ## Future State?
 
 <hr>
-.pull-left[
 
+.left-title[
 ```{r}
 R_growth <- "regime shifts?"
 ```
 
-- non-linear
-- many stable states
-- expected to increase
-]
+- non-linear  
+- many stable states  
+- expected to increase 
 
-.pull-right[
-<img src="images/matthew-bargh-sXb-Yf7GGs8-unsplash.jpg" style="max-width:85%;" alt="Picture of Columbia-Shuswap Ecosystem, British Columbia, Canada"/>
-```{r, echo=FALSE, fig.width=4, fig.height=2, fig.align='center'}
+```{r, include=FALSE, fig.width=3, fig.height=2, fig.align='center'}
 df <- data.frame(y = c(1,2,1,2,3,3,3,3,1,1,5,5,5,8,8,8,7,9,9,8,9,10),
                  x = c(1:22))
 df %>% 
@@ -406,7 +412,12 @@ df %>%
   annotate("segment", x = 20, xend = 22, y = 9.6, yend = 10,
            colour = "#440154FF", size = 3, lineend = "round") 
 ```
- ]
+]
+
+.right-title[
+
+<img src="images/matthew-bargh-sXb-Yf7GGs8-unsplash.jpg" style="max-width:100%;" alt="Picture of Columbia-Shuswap Ecosystem, British Columbia, Canada"/>
+]
 
 ---
 
