@@ -287,6 +287,53 @@ class: clear, no-number, center
 
 <hr>
 
+```{r, cache=TRUE}
+#get number of bcgov repos
+bcgov <- gh("/orgs/bcgov")
+n_repos <- bcgov[["public_repos"]]
+
+#get all repo names and date created
+repo_names <- map_df(seq_len(ceiling(n_repos/30)), ~{
+  repos <- gh("GET /orgs/{org}/repos", org = "bcgov", page = .x)
+  data.frame(
+    name = vapply(repos, "[[", "", "name"),
+    date_created = vapply(repos, "[[", "", "created_at")
+  )
+})
+
+#get repo language
+language <- map_df(repo_names$name, ~{
+  data.frame(
+    top_language = names(gh("/repos/bcgov/{repo}/languages", repo = .x))[1],
+    name = .x
+  )
+})
+
+#join together and find the cumulative number of repos
+repos_over_time <- repo_names %>% 
+  left_join(language, by = "name") %>% 
+  mutate(date_created = ymd_hms(date_created)) %>% 
+  mutate(date = as.Date(date_created)) %>% 
+  group_by(top_language, date) %>% 
+  summarise(n = n()) %>% 
+  mutate(cumu = cumsum(n))
+
+#create a df for labelling
+label_df <- repos_over_time %>% 
+  group_by(top_language) %>% 
+  filter(cumu == max(cumu)) %>% 
+  ungroup() %>% 
+  slice_max(order_by = cumu, n = 10)
+
+#plot
+repos_over_time %>% 
+  ggplot(aes(x = date, y = cumu, colour = top_language)) +
+  geom_line() +
+  geom_text(data = label_df, aes(y = cumu, label = top_language), x = max(label_df$date) + 40) +
+  labs(y = "Cumulative Number of bcgov Repositories", title = "Cumulative Number of Repositories by Top Language Used within the Repository") +
+  guides(colour = FALSE) +
+  theme_minimal()
+```
 
 
 ---
