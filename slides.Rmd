@@ -195,25 +195,39 @@ class: clear, no-number
 
 ---
 
+class: clear, no-number, center
+
+## Change: Building a Learning Community
+
+<hr>
+
+<img src="images/Rcourse2014.jpg" alt="Picture of BCPS first in-house R training course" style="max-width:50%;"/>
+
+---
+
 class: clear, no-number
 
-## Internal Change: Building Community
+## Learning from Other Communities
 
 <hr>
 
 .right-column[.center[
-<img src="images/Rcourse2014.jpg" alt="Picture of BCPS first in-house R training course" style="max-width:65%; padding: 0px 0px 0px 50px;"/>
+
+```{r, echo=FALSE, fig.alt=""}
+tweet_screenshot(tweet_url("stephhazlitt", "449031152926330880"), maxwidth = 350)
+```
+
 ]]
 
 .left-column[
-<img src="https://www.software.ac.uk/sites/default/files/The%20Carpentries.jpg" alt="The Carpentries hexagon-shaped logo" style="max-width:85%; padding: 20px 0px 0px 50px;"/><img src="https://scotttalks.info/user-http/img/green_short_hexsticker.png" alt="rOpenSci hexagon-shaped logo" style="max-width:90%; padding: 0px 0px 0px 130px;"/>
+<img src="https://www.software.ac.uk/sites/default/files/The%20Carpentries.jpg" alt="The Carpentries hexagon-shaped logo" style="max-width:85%; padding: 20px 0px 0px 10px;"/><img src="https://scotttalks.info/user-http/img/green_short_hexsticker.png" alt="rOpenSci hexagon-shaped logo" style="max-width:90%; padding: 0px 0px 0px 90px;"/>
 ]
 
 ---
 
 class: clear, no-number
 
-## External Disturbance: bcgov GitHub
+## Disturbance: bcgov GitHub 🎉
 
 <hr>
 
@@ -297,7 +311,40 @@ class: clear, no-number, center
 
 class: clear, no-number, center
 
-## Observation: It is About People
+## Current State: Data Science Community of Practice
+
+<hr>
+
+<img src="images/cop-logo.png" alt="bcgov Data Science Community of Practice logo sticker" style="max-width:50%;"/>
+
+<img src="https://git-scm.com/images/logo@2x.png" alt="Git software logo" style="max-width:12%; padding: 0px 15px 10px 100px;"/><img src="https://www.r-project.org/Rlogo.png" alt="R Project for Statistical Computing logo" style="max-width:8%; padding: 0px 15px 10px 0px;"/><img src="https://www.python.org/static/img/python-logo@2x.png" alt="Python logo" style="max-width:20%"/>
+
+---
+
+class: clear, no-number
+
+## Current State: R Learning in the BCPS
+
+<hr>
+
+.pull-left[
+
+- getting started  
+- geospatial  
+- big data  
+- reproducibility  
+- bridging workflows  
+ ]
+ 
+ .pull-right[
+ <img src="images/cop-poster.png" alt="bcgov Data Science Community of Practice logo sticker" style="max-width:100%;"/>
+ ]
+
+---
+
+class: clear, no-number, center
+
+## Observation: People
 
 <hr>
 
@@ -317,7 +364,7 @@ class: clear, no-number, center
 
 class: clear, no-number, center
 
-## Observation: It is About Trust
+## Observation: Trust
 
 <hr>
 
@@ -327,37 +374,20 @@ tweet_screenshot(tweet_url("stephhazlitt", "1179819866955534336"), maxwidth = 35
 
 ---
 
-class: clear, no-number, center
-
-## Current State: Building Community
-
-<hr>
-
-<img src="images/cop-logo.png" alt="bcgov Data Science Community of Practice logo sticker" style="max-width:50%;"/>
-
-<img src="https://git-scm.com/images/logo@2x.png" alt="Git software logo" style="max-width:12%; padding: 0px 15px 10px 100px;"/><img src="https://www.r-project.org/Rlogo.png" alt="R Project for Statistical Computing logo" style="max-width:8%; padding: 0px 15px 10px 0px;"/><img src="https://www.python.org/static/img/python-logo@2x.png" alt="Python logo" style="max-width:20%"/>
-
-???
-
-Challenges and focus moving forward
-
----
-
 class: clear, no-number
 
-## Future States?
+## Future State?
 
 <hr>
 .pull-left[
 
 ```{r}
-R <- "regime shifts"
+R_growth <- "regime shifts?"
 ```
 
 - non-linear
 - many stable states
 - expected to increase
-
 ]
 
 .pull-right[
