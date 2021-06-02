@@ -74,6 +74,9 @@ cascadia <- get_acs(
 r_use_df <- read_csv("data/r-growth-bcps.csv")
 
 bcgov_logo <- "images/BCID_V_cmyk_pos.jpg"
+
+label_df <- readRDS("data/label_df.rds")
+repos_over_time <- readRDS("data/repos_over_time.rds")
 ```
 
 class: clear, no-number
@@ -283,58 +286,48 @@ class: clear, no-number, center
 
 class: clear, no-number, center
 
-## ## Growth in the Use of R & in the BC Public Service
+## Growth in the Use of R & GitHub in the BC Public Service
 
 <hr>
 
-```{r, cache=TRUE}
-#get number of bcgov repos
-bcgov <- gh("/orgs/bcgov")
-n_repos <- bcgov[["public_repos"]]
+```{r, echo=FALSE, fig.width=16, fig.height = 7, fig.align='center', fig.alt=""}
 
-#get all repo names and date created
-repo_names <- map_df(seq_len(ceiling(n_repos/30)), ~{
-  repos <- gh("GET /orgs/{org}/repos", org = "bcgov", page = .x)
-  data.frame(
-    name = vapply(repos, "[[", "", "name"),
-    date_created = vapply(repos, "[[", "", "created_at")
-  )
-})
-
-#get repo language
-language <- map_df(repo_names$name, ~{
-  data.frame(
-    top_language = names(gh("/repos/bcgov/{repo}/languages", repo = .x))[1],
-    name = .x
-  )
-})
-
-#join together and find the cumulative number of repos
-repos_over_time <- repo_names %>% 
-  left_join(language, by = "name") %>% 
-  mutate(date_created = ymd_hms(date_created)) %>% 
-  mutate(date = as.Date(date_created)) %>% 
-  group_by(top_language, date) %>% 
-  summarise(n = n()) %>% 
-  mutate(cumu = cumsum(n))
-
-#create a df for labelling
-label_df <- repos_over_time %>% 
-  group_by(top_language) %>% 
-  filter(cumu == max(cumu)) %>% 
-  ungroup() %>% 
-  slice_max(order_by = cumu, n = 10)
-
-#plot
-repos_over_time %>% 
-  ggplot(aes(x = date, y = cumu, colour = top_language)) +
+ggplot(repos_over_time %>% filter(top_language != "R"),
+                                    aes(x = date, y = cumu, colour = top_language)) +
   geom_line() +
-  geom_text(data = label_df, aes(y = cumu, label = top_language), x = max(label_df$date) + 40) +
-  labs(y = "Cumulative Number of bcgov Repositories", title = "Cumulative Number of Repositories by Top Language Used within the Repository") +
+  geom_line(data = repos_over_time %>% filter(top_language == "R"),
+                                    aes(x = date, y = cumu, colour = top_language), colour = "#30123BFF", size = 1.3) +
+  geom_text(data = label_df %>% filter(top_language != "R"),
+            aes(y = cumu, label = top_language),
+            x = max(label_df$date) + 30,
+            nudge_y = 0,
+            size = 5) +
+   geom_text(data = label_df %>% filter(top_language == "R"),
+            aes(y = cumu, label = top_language),
+            x = max(label_df$date) + 30,
+            nudge_y = 0,
+            size = 10,
+            colour = "#30123BFF",
+            fontface = "bold") +
+  scale_x_date(date_breaks = "1 year",
+               date_labels = "%Y",
+               limits = as.Date(c(NA, '2021-10-01'))) +
+  labs(y = NULL,
+       x = NULL,
+       title = "Cumulative Number of bcgov GitHub Repositories by Top Language Used") +
   guides(colour = FALSE) +
-  theme_minimal()
+  scale_colour_viridis(discrete = TRUE,
+                       option = "turbo",
+                       direction = -1) +
+  theme_minimal() +
+  labs(x = NULL, y = NULL) +
+  theme(
+    axis.text = element_text(size = 15),
+    legend.position = "none",
+    panel.grid.minor = element_blank(),
+    plot.title = element_text(size = 21)
+  )
 ```
-
 
 ---
 
