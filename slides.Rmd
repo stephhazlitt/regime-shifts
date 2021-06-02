@@ -98,7 +98,8 @@ ggplot(cascadia) +
   theme_minimal() +
   coord_sf(datum = NA) +
   labs(x = NULL, y = NULL, fill = NULL) +
-  theme(legend.position = "none") +
+  theme(legend.position = "none",
+        plot.background = element_rect(fill = "#fafafa", colour = NA)) +
   scale_fill_viridis(discrete = TRUE,
                      option = "viridis")
 ```
@@ -320,7 +321,8 @@ ggplot(repos_over_time %>% filter(top_language != "R"),
     axis.text = element_text(size = 15),
     legend.position = "none",
     panel.grid.minor = element_blank(),
-    plot.title = element_text(size = 21)
+    plot.title = element_text(size = 21),
+    plot.background = element_rect(fill = "#fafafa", colour = NA)
   )
 ```
 
