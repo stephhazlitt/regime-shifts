@@ -55,8 +55,16 @@ library(tweetrmd)
 library(gh)
 library(purrr)
 library(lubridate)
+library(magick)
 options(tigris_use_cache = TRUE)
 ```
+
+```{r, echo=FALSE}
+bcgov_logo <- image_read("images/BCID_V_rgb_pos.png") %>%
+  image_background("#fafafa") %>%
+  image_trim()
+```
+
 
 ```{r, echo=FALSE, cache=TRUE, message=FALSE}
 cascadia <- get_acs(
@@ -72,8 +80,6 @@ cascadia <- get_acs(
               select(NAME = name))
 
 r_use_df <- read_csv("data/r-growth-bcps.csv")
-
-bcgov_logo <- "images/BCID_V_cmyk_pos.jpg"
 
 label_df <- readRDS("data/label_df.rds")
 repos_over_time <- readRDS("data/repos_over_time.rds")
@@ -98,8 +104,10 @@ ggplot(cascadia) +
   theme_minimal() +
   coord_sf(datum = NA) +
   labs(x = NULL, y = NULL, fill = NULL) +
-  theme(legend.position = "none",
-        plot.background = element_rect(fill = "#fafafa", colour = NA)) +
+  theme(
+    legend.position = "none",
+    plot.background = element_rect(fill = "#fafafa", colour = NA)
+  ) +
   scale_fill_viridis(discrete = TRUE,
                      option = "viridis")
 ```
@@ -139,12 +147,8 @@ class: clear, no-number
 
 <hr>
 
-```{r, echo=FALSE, fig.width=16, fig.height = 7, fig.align='center', fig.alt="Plot of significant milestones, shown with text labelling, in the use of R in the BC Public Service 2012 to 2021"}
+```{r, cache=FALSE, echo=FALSE, fig.width=16, fig.height = 7, fig.align='center', fig.alt="Plot of significant milestones, shown with text labelling, in the use of R in the BC Public Service 2012 to 2021"}
 r_changes <- ggdraw() +
-  draw_image(bcgov_logo,
-             y = .3,
-             x = -.43,
-             scale = .35) +
   draw_plot(
     r_use_df %>%
       ggplot(aes(year, fake_y)) +
@@ -162,9 +166,13 @@ r_changes <- ggdraw() +
         axis.text.y = element_blank(),
         axis.text.x = element_text(size = 18, face = "bold"),
         legend.position = "none",
-        panel.grid.minor = element_blank()
-      )
-  )
+        panel.grid.minor = element_blank(),
+        plot.background = element_rect(fill = "#fafafa", colour = NA)
+      )) +
+   draw_image(bcgov_logo,
+             y = .33,
+             x = -.43,
+             scale = .20)
 r_changes
 ```
 
