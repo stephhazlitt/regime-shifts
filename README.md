@@ -6,6 +6,8 @@ Talk for [CascadiaRConf 2021: Infectious Ideas](https://cascadiarconf.com/)
 
 Virtual Conference, June 5th, 2021
 
+- [Slides](https://stephhazlitt.github.io/regime-shifts/slides#1)
+
 #### Software
 - [R](https://www.r-project.org/) & [RStudio IDE](https://www.rstudio.com/)
 - [{xaringan}](https://github.com/yihui/xaringan)
