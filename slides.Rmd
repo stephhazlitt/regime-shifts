@@ -188,11 +188,6 @@ class: clear, no-number
 <img src="images/mana5280-axqTLZ12Jss-unsplash.jpg" alt="Image of a Sea Otter sourced from Unsplash" style="max-width:50%; padding: 0px 20px 130px 0px;"/><img src="https://upload.wikimedia.org/wikipedia/commons/c/cd/CascadiaMap.png" alt="Map of Cascadia bioregion and Pacific Northwest provinces and states sourced from Wikipedia https://en.wikipedia.org/wiki/Cascadia_(bioregion)" style="max-width:45%;"/>.teeny[Map: Lauren Tierney CC BY-SA 4.0]
 ]
 
-???
-
-- A smooth change in an internal process (feedback)
-- _OR_ a disturbance triggering a different system behaviour (external shock)
-
 ---
 
 class: clear, no-number, center
@@ -201,7 +196,7 @@ class: clear, no-number, center
 
 <hr>
 
-<img src="images/Rcourse2014.jpg" alt="Picture of BCPS first in-house R training course" style="max-width:50%;"/>
+<img src="images/Rcourse2014.jpg" alt="Picture of BC Public Service first in-house R training workshop" style="max-width:50%;"/>
 
 ---
 
@@ -213,7 +208,7 @@ class: clear, no-number
 
 .right-column[.center[
 
-```{r, echo=FALSE, fig.alt=""}
+```{r, echo=FALSE, fig.alt="Tweet by @stephhazlitt Excited about attending Software Carpentry bootcamp from March 2014"}
 tweet_screenshot(tweet_url("stephhazlitt", "449031152926330880"), maxwidth = 350)
 ```
 
@@ -263,7 +258,7 @@ class: clear, no-number
 ]
 
 .pull-right[
-<img src="images/code-together_Feb2020.jpeg" alt="Picture of BCPS code together meet-up" style="max-width:80%; padding: 150px 0px 0px 120px;"/>
+<img src="images/code-together_Feb2020.jpeg" alt="Picture of BC Public Service code together meet-up" style="max-width:80%; padding: 150px 0px 0px 120px;"/>
 ]
 
 .footnote[https://gist.github.com/stephhazlitt/c6ccc36b5ea0ff190cf479659d164b8e]
@@ -290,7 +285,7 @@ class: clear, no-number, center
 
 <hr>
 
-```{r, echo=FALSE, fig.width=16, fig.height = 7, fig.align='center', fig.alt=""}
+```{r, echo=FALSE, fig.width=16, fig.height = 7, fig.align='center', fig.alt="Plot showing the cumulative number of repositories in bcgov GitHub by top language used 2015 to 2021"}
 
 ggplot(repos_over_time %>% filter(top_language != "R"),
                                     aes(x = date, y = cumu, colour = top_language)) +
@@ -347,12 +342,6 @@ class: clear, no-number, center
 
 <img src="images/env-shiny-example.png" alt="Screen shot of bcgov R Shiny App showing municipal solid waste disposal rates across British Columbia" style="max-width:40%; padding: 0px 50px 0px 0px;"/>
 <img src="images/bcstats-shiny-example.png" alt="Screen shot of bcgov R Shiny App showing economic indicators for British Columbia" style="max-width:45%; padding: 0px 0px 20px 0px;"/>
-
-???
-
-- CRAN
-- Emily Riederer talk
-- individuals, teams & CRAN
 
 ---
 
@@ -417,7 +406,7 @@ class: clear, no-number, center
 
 <hr>
 
-```{r, echo=FALSE, fig.alt="Image of a tweet quoting a speaker saying go at the speed of trust"}
+```{r, echo=FALSE, fig.alt="Image of a tweet by @stephhazlitt quoting a speaker saying go at the speed of trust from October 2019"}
 tweet_screenshot(tweet_url("stephhazlitt", "1179819866955534336"), maxwidth = 350)
 ```
 
@@ -474,13 +463,5 @@ class: clear, no-number, center
 @stephhazlitt on Twitter & GitHub  
 https://github.com/stephhazlitt/regime-shifts
 
-???
-
-Sessions:
-- Sharing R Love
-- Reporting & Sharing of R
-- Using R
-- Shiny and R
-- Education & Community
 
 
