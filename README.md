@@ -25,6 +25,7 @@ Virtual Conference, June 5th, 2021
 #### Images (if not already attributed)
 - British Columbia Parliament House: Parsa Mivehchi - Unsplash https://unsplash.com/license
 - Sea Otter: Mana5280 - Unsplash https://unsplash.com/license
+- Cascadia Map: Lauren Tierney via https://commons.wikimedia.org/wiki/File:CascadiaMap.png [CC BY-SA 4.0]( https://creativecommons.org/licenses/by-sa/4.0/deed.en)
 - Columbia-Shuswap, British Columbia: Matthew Bargh - Unsplash https://unsplash.com/license
 - bcgov Data Science CoP photos - [Copyright Province of British Columbia](https://www2.gov.bc.ca/gov/content/home/copyright)
 - BC Mark - [Crown Copyright](https://www2.gov.bc.ca/gov/content?id=202ADEEF3B3840E99ABAB3D1D1A5007B) 
