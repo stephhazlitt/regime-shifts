@@ -27,6 +27,8 @@ Virtual Conference, June 5th, 2021
 - bcgov Data Science CoP photos - [Copyright Province of British Columbia](https://www2.gov.bc.ca/gov/content/home/copyright)
 - BC Mark - [Crown Copyright](https://www2.gov.bc.ca/gov/content?id=202ADEEF3B3840E99ABAB3D1D1A5007B) 
 
+#### Inspiration
+Gratitude to [Sam Albers](https://github.com/boshek) & [Andy Teucher]( https://github.com/ateucher) for early conversations about mashing up growing data science skills and regime shifts, and to both and [Karly Harker](https://github.com/KarHarker) for feedback as the talk was developed.
 
 #### Licence
 
