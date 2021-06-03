@@ -86,6 +86,17 @@ h3 {
   padding-top: 2em;
 }
 
+.left-med {
+  width: 55%;
+  height: 92%;
+  float: left;
+}
+
+.right-med {
+  width: 40%;
+  float: right;
+}
+
 .right-title p {
   margin-top: 20px;
   margin-bottom: 20px;
