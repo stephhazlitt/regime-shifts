@@ -11,9 +11,9 @@ Virtual Conference, June 5th, 2021
 #### Software
 - [R](https://www.r-project.org/) & [RStudio IDE](https://www.rstudio.com/)
 - [{xaringan}](https://github.com/yihui/xaringan)
-- {tidyverse}
-- {bcmaps}
-- {tidycensus}
+- [{tidyverse}](https://www.tidyverse.org/)
+- [{bcmaps}](https://github.com/bcgov/bcmaps)
+- [{tidycensus}](https://walker-data.com/tidycensus/)
 
 #### Sources
 
@@ -31,7 +31,7 @@ Virtual Conference, June 5th, 2021
 - BC Mark - [Crown Copyright](https://www2.gov.bc.ca/gov/content?id=202ADEEF3B3840E99ABAB3D1D1A5007B) 
 
 #### Inspiration
-Gratitude to [Sam Albers](https://github.com/boshek) & [Andy Teucher]( https://github.com/ateucher) for early conversations about mashing up growing data science skills and regime shifts, and to both and [Karly Harker](https://github.com/KarHarker) for feedback as the talk was developed.
+Gratitude to [Sam Albers](https://github.com/boshek) & [Andy Teucher]( https://github.com/ateucher) for early conversations about thinking about the growth of data science skills as a kind of regime shift, and to both and [Karly Harker](https://github.com/KarHarker) for feedback as the talk was developed.
 
 #### Licence
 
