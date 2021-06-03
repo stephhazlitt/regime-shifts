@@ -437,12 +437,6 @@ R_growth <- "regime shifts?"
 - many stable states  
 - expected to increase 
 
-]
-
-.right-med[
-
-<img src="images/matthew-bargh-sXb-Yf7GGs8-unsplash.jpg" style="max-width:90%;" alt="Picture of Columbia-Shuswap Ecosystem, British Columbia, Canada"/>
-
 ```{r, echo=FALSE, fig.width=5.5, fig.height=1.8}
 df <- data.frame(y = c(1,2,1,2,3,3,3,3,1,1,5,5,5,8,8,8,7,9,9,8,9,10),
                  x = c(1:22))
@@ -457,6 +451,13 @@ df %>%
   annotate("segment", x = 20, xend = 22, y = 9.6, yend = 10,
            colour = "#440154FF", size = 3, lineend = "round") 
 ```
+
+]
+
+.right-med[
+
+<img src="images/matthew-bargh-sXb-Yf7GGs8-unsplash.jpg" style="max-width:100%;" alt="Picture of Columbia-Shuswap Ecosystem, British Columbia, Canada"/>
+
 ]
 
 ---
