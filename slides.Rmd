@@ -236,10 +236,10 @@ class: clear, no-number
 <hr>
 
 .center[
-<img src="images/bcgov-github-2013.png" alt="bcgov GitHub web page screen shot from 2013" style="max-width:80%;"/>
+<img src="images/bcgov-github-2015.png" alt="bcgov GitHub web page screen shot from 2015" style="max-width:80%;"/>
 ]
 
-.footnote[https<nolink>://github.com/bcgov (2013)]
+.footnote[https<nolink>://github.com/bcgov (2015)]
 
 ---
 
