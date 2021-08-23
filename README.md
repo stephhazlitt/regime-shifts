@@ -6,6 +6,7 @@ Talk for [CascadiaRConf 2021: Infectious Ideas](https://cascadiarconf.com/)
 
 Virtual Conference, June 5th, 2021
 
+- [Recording on YouTube](https://www.youtube.com/watch?v=YNfcxTjdYkk)  
 - [Slides](https://stephhazlitt.github.io/regime-shifts/slides#1)
 
 #### Software
