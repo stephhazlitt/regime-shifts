@@ -23,7 +23,7 @@ editor_options:
 # The BC Public Service has seen a significant shift towards the use of R and other data science tools for data analysis and communication. In the natural world, these regime shifts---large, persistent changes to a system---usually require some perturbation (either internal or external) or disturbance event to initiate the shift. This talk will share insider observations of some of the events, processes, and even a disturbance, that have helped kickstart and support the use and growth of R and develop a data science community. Together these changes, with some ongoing organizational support, have enabled some individual contributors, data science teams and leadership in the BC Public Service to shift towards more programmatic, open and reproducible data science workflows.
 ```
 
-```{r setup, include=FALSE}
+```{r setup, include=FALSE, message=FALSE}
 options(htmltools.dir.version = FALSE)
 options(width = 90)
 options(max_print = 5)
@@ -59,7 +59,8 @@ library(magick)
 options(tigris_use_cache = TRUE)
 ```
 
-```{r, echo=FALSE}
+
+```{r, echo=FALSE, message=FALSE}
 bcgov_logo <- image_read("images/BCID_V_rgb_pos.png") %>%
   image_background("#fafafa") %>%
   image_trim()
@@ -84,6 +85,7 @@ r_use_df <- read_csv("data/r-growth-bcps.csv")
 label_df <- readRDS("data/label_df.rds")
 repos_over_time <- readRDS("data/repos_over_time.rds")
 ```
+
 
 class: clear, no-number
 
@@ -343,7 +345,7 @@ class: clear, no-number, center
 <hr>
 
 <img src="https://raw.githubusercontent.com/bcgov/bcdata/master/inst/sticker/bcdata.png" alt="bcdata R package hexagon-shaped logo" style="max-width:12%;"/>
-<img src="https://github.com/bcgov/fasstr/blob/master/man/figures/fasstr.png?raw=true" alt="fasstr R package hexagon-shaped logo" style="max-width:100%;"/>
+<img src="https://github.com/bcgov/fasstr/blob/main/man/figures/fasstr.png?raw=true" alt="fasstr R package hexagon-shaped logo" style="max-width:100%;"/>
 <img src="https://github.com/bcgov/ssdtools/blob/master/man/figures/logo.png?raw=true" alt="ssdtools R package hexagon-shaped logo" style="max-width:100%;"/>
 <img src="https://github.com/bcgov/elucidate/blob/main/man/figures/hex-elucidate.png?raw=true" alt="elucidate R package hexagon-shaped logo" style="max-width:11%;"/>
 <img src="https://raw.githubusercontent.com/bcgov/bcgovr/master/tools/readme/logo.png" alt="bcgovr R package hexagon-shaped logo" style="max-width:100%;"/>
