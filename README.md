@@ -1,4 +1,4 @@
-[![img](https://img.shields.io/badge/Lifecycle-Maturing-007EC6)](https://github.com/bcgov/repomountie/blob/master/doc/lifecycle-badges.md)
+[![img](https://img.shields.io/badge/Lifecycle-Stable-97ca00)](https://github.com/bcgov/repomountie/blob/master/doc/lifecycle-badges.md)
 
 ## regime-shifts
 
@@ -30,6 +30,11 @@ Virtual Conference, June 5th, 2021
 - Columbia-Shuswap, British Columbia: Matthew Bargh - Unsplash https://unsplash.com/license
 - bcgov Data Science CoP photos - [Copyright Province of British Columbia](https://www2.gov.bc.ca/gov/content/home/copyright)
 - BC Mark - [Crown Copyright](https://www2.gov.bc.ca/gov/content?id=202ADEEF3B3840E99ABAB3D1D1A5007B) 
+
+#### Abstract
+_Observations from the field: regime shifts in R and data science within the BC Public Service_
+ 
+The BC Public Service has seen a significant shift towards the use of R and other data science tools for data analysis and communication. In the natural world, these regime shifts—large, persistent changes to a system—usually require some perturbation (either internal or external) or disturbance event to initiate the shift. This talk will share insider observations of some of the events, processes, and even a disturbance, that have helped kickstart and support the use and growth of R and develop a data science community. Together these changes, with some ongoing organizational support, have enabled some individual contributors, data science teams and leadership in the BC Public Service to shift towards more programmatic, open and reproducible data science workflows.
 
 #### Inspiration
 Gratitude to [Sam Albers](https://github.com/boshek) & [Andy Teucher]( https://github.com/ateucher) for early conversations about thinking about the growth of data science skills as a kind of regime shift, and to both and [Karly Harker](https://github.com/KarHarker) for feedback as the talk was developed.
