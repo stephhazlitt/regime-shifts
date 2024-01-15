@@ -17,12 +17,6 @@ editor_options:
   chunk_output_type: console
 ---
 
-```{r, include=FALSE, eval=FALSE}
-# Abstract
-# 
-# The BC Public Service has seen a significant shift towards the use of R and other data science tools for data analysis and communication. In the natural world, these regime shifts---large, persistent changes to a system---usually require some perturbation (either internal or external) or disturbance event to initiate the shift. This talk will share insider observations of some of the events, processes, and even a disturbance, that have helped kickstart and support the use and growth of R and develop a data science community. Together these changes, with some ongoing organizational support, have enabled some individual contributors, data science teams and leadership in the BC Public Service to shift towards more programmatic, open and reproducible data science workflows.
-```
-
 ```{r setup, include=FALSE, message=FALSE}
 options(htmltools.dir.version = FALSE)
 options(width = 90)
@@ -51,23 +45,17 @@ library(tidycensus)
 library(readr)
 library(stringr)
 library(cowplot)
-library(tweetrmd)
+library(tweetrmd) #devtools::install_github("gadenbuie/tweetrmd")
 library(gh)
 library(purrr)
 library(lubridate)
 library(magick)
 options(tigris_use_cache = TRUE)
-```
 
-
-```{r, echo=FALSE, message=FALSE}
 bcgov_logo <- image_read("images/BCID_V_rgb_pos.png") %>%
   image_background("#fafafa") %>%
   image_trim()
-```
 
-
-```{r, echo=FALSE, cache=TRUE, message=FALSE}
 cascadia <- get_acs(
   state = c("WA", "OR"),
   geography = "state",
@@ -84,8 +72,12 @@ r_use_df <- read_csv("data/r-growth-bcps.csv")
 
 label_df <- readRDS("data/label_df.rds")
 repos_over_time <- readRDS("data/repos_over_time.rds")
-```
 
+# Abstract
+# 
+# The BC Public Service has seen a significant shift towards the use of R and other data science tools for data analysis and communication. In the natural world, these regime shifts---large, persistent changes to a system---usually require some perturbation (either internal or external) or disturbance event to initiate the shift. This talk will share insider observations of some of the events, processes, and even a disturbance, that have helped kickstart and support the use and growth of R and develop a data science community. Together these changes, with some ongoing organizational support, have enabled some individual contributors, data science teams and leadership in the BC Public Service to shift towards more programmatic, open and reproducible data science workflows.
+
+```
 
 class: clear, no-number
 
@@ -346,7 +338,7 @@ class: clear, no-number, center
 
 <img src="https://raw.githubusercontent.com/bcgov/bcdata/master/inst/sticker/bcdata.png" alt="bcdata R package hexagon-shaped logo" style="max-width:12%;"/>
 <img src="https://github.com/bcgov/fasstr/blob/main/man/figures/fasstr.png?raw=true" alt="fasstr R package hexagon-shaped logo" style="max-width:100%;"/>
-<img src="https://github.com/bcgov/ssdtools/blob/master/man/figures/logo.png?raw=true" alt="ssdtools R package hexagon-shaped logo" style="max-width:100%;"/>
+<img src="https://github.com/bcgov/ssdtools/blob/main/man/figures/logo.png?raw=true" alt="ssdtools R package hexagon-shaped logo" style="max-width:100%;"/>
 <img src="https://github.com/bcgov/elucidate/blob/main/man/figures/hex-elucidate.png?raw=true" alt="elucidate R package hexagon-shaped logo" style="max-width:11%;"/>
 <img src="https://raw.githubusercontent.com/bcgov/bcgovr/master/tools/readme/logo.png" alt="bcgovr R package hexagon-shaped logo" style="max-width:100%;"/>
 <img src="https://raw.githubusercontent.com/bcgov/bcmaps/master/inst/sticker/bcmaps.png" alt="bcmaps R package hexagon-shaped logo" style="max-width:11%;"/>
@@ -472,7 +464,7 @@ class: clear, no-number, center
 
 "Be Kind, Be Calm, Be Safe"  – Dr. Bonnie Henry 🇨🇦 
 
-<img src="https://cascadiarconf.com/img/logo_2021.png" alt="CascadiaRConf2021" alt="CascadiaRConf2021 hexagon-shaped logo" style="max-width:20%; padding: 0px 0px 0px 0px;"/>
+<img src="images/cascadiaR_hex_2021.png" alt="CascadiaRConf2021" alt="CascadiaRConf2021 hexagon-shaped logo" style="max-width:20%; padding: 0px 0px 0px 0px;"/>
 
 @stephhazlitt on Twitter & GitHub  
 https://github.com/stephhazlitt/regime-shifts
